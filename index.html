@@ -4,44 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K-Pop Items</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #92147f;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background-color: #4caf50;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #45a049;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .product {
+            width: 45%; /* Adjust as needed */
+            margin-bottom: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 10px;
+            margin: 0;
+            color: #333;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 0 0 8px 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #92147f;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 
-<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333;">
+<body>
 
-    <section style="max-width: 600px; margin: 0 auto; padding: 20px;">
-        
-            <h1 style="color: #ff4500;">K-Pop Items</h1>
-        
-                <div style="margin-bottom: 20px;">
-                    <img src="Images\Photo cards.jpg" width="500" height="333" style="border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <button type="button" onclick="addToCart('Photo Cards')" style="background-color: #4caf50; color: #fff; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">ADD TO CART</button>
-                    <p style="color: #555;">Photo Cards</p>
-                </div>
+    <header>
+        <h1>K-Pop Items</h1>
+    </header>
 
-                <div style="margin-bottom: 20px;">
-                    <img src="Images\Key Chains.jpg" width="500" height="333" style="border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <button type="button" onclick="addToCart('Photo Cards')" style="background-color: #4caf50; color: #fff; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">ADD TO CART</button>
-                    <p style="color: #555;">Key Chains</p>
-                </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Contact</a>
+    </nav>
 
-                <div style="margin-bottom: 20px;">
-                    <img src="Images\Head Phones.jpg" width="500" height="333" style="border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <button type="button" onclick="addToCart('Photo Cards')" style="background-color: #4caf50; color: #fff; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">ADD TO CART</button>
-                    <p style="color: #555;">Head Phones</p>
-                </div>
+    <section>
 
-                <div style="margin-bottom: 20px;">
-                    <img src="Images\Army Bombs.jpg" width="500" height="333" style="border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <button type="button" onclick="addToCart('Photo Cards')" style="background-color: #4caf50; color: #fff; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">ADD TO CART</button>
-                    <p style="color: #555;">Army Bombs</p>
-                </div>
+        <div class="product">
+            <img src="Images\Photo cards.jpg" alt="Photo Cards">
+            <h2>Photo Cards</h2>
+            <button type="button" onclick="addToCart('Photo Cards')">ADD TO CART</button>
+        </div>
 
-                <div style="margin-bottom: 20px;">
-                    <img src="Images\Ear Phones.jpg" width="500" height="333" style="border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                    <button type="button" onclick="addToCart('Photo Cards')" style="background-color: #4caf50; color: #fff; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">ADD TO CART</button>
-                    <p style="color: #555;">Ear Phones</p>
-                </div>
+        <div class="product">
+            <img src="Images\Key Chains.jpg" alt="Key Chains">
+            <h2>Key Chains</h2>
+            <button type="button" onclick="addToCart('Key Chains')">ADD TO CART</button>
+        </div>
+
+        <div class="product">
+            <img src="Images\Head Phones.jpg" alt="Head Phones">
+            <h2>Head Phones</h2>
+            <button type="button" onclick="addToCart('Head Phones')">ADD TO CART</button>
+        </div>
+
+        <div class="product">
+            <img src="Images\Army Bombs.jpg" alt="Army Bombs">
+            <h2>Army Bombs</h2>
+            <button type="button" onclick="addToCart('Army Bombs')">ADD TO CART</button>
+        </div>
+
+        <div class="product">
+            <img src="Images\earphones.jpg" alt="Ear Phones">
+            <h2>Ear Phones</h2>
+            <button type="button" onclick="addToCart('Ear Phones')">ADD TO CART</button>
+        </div>
+
+        <div class="product">
+            <img src="Images\Boots.jpg" alt="Boots">
+            <h2>Boots</h2>
+            <button type="button" onclick="addToCart('Boots')">ADD TO CART</button>
+        </div>
+
     </section>
+
+    <footer>
+        &copy; 2023 K-Pop Items
+    </footer>
 
     <script>
         function addToCart(item) {
@@ -51,3 +171,5 @@
 
 </body>
 </html>
+
+
