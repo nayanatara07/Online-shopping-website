@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-Pop Items</title>
+    <title>K-POP ITEMS</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f8f8;
+            background-color: #dbaddb;
             color: #333;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #92147f;
+            background-color: #b30caa;
             color: #fff;
             text-align: center;
             padding: 1em;
@@ -53,8 +54,8 @@
         }
 
         .product {
-            width: 45%; /* Adjust as needed */
-            margin-bottom: 20px;
+            width: 30%; /* Adjust as needed for 3 products in one row */
+            margin: 1%; /* Adjust margin to create space between products */
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -97,7 +98,7 @@
         footer {
             text-align: center;
             padding: 1em;
-            background-color: #92147f;
+            background-color: #b30caa;
             color: #fff;
             position: fixed;
             bottom: 0;
@@ -110,13 +111,13 @@
 <body>
 
     <header>
-        <h1>K-Pop Items</h1>
+        <h1>K-POP ITEMS</h1>
     </header>
 
     <nav>
         <a href="#">Contact</a>
         <a href="#">Shop</a>
-        <a href="#">Home</a> 
+        <a href="#">Home</a>
     </nav>
 
     <section>
@@ -146,21 +147,39 @@
         </div>
 
         <div class="product">
-            <img src="Images\earphones.jpg" alt="Ear Phones">
-            <h2>Ear Phones</h2>
-            <button type="button" onclick="addToCart('Ear Phones')">ADD TO CART</button>
+            <img src="Images\earphones.jpg" alt="Ear phones">
+            <h2>Ear phones</h2>
+            <button type="button" onclick="addToCart('Ear phones')">ADD TO CART</button>
         </div>
 
         <div class="product">
-            <img src="Images\Boots.jpg" alt="Boots">
-            <h2>Boots</h2>
-            <button type="button" onclick="addToCart('Boots')">ADD TO CART</button>
+            <img src="Images\K-TShirt.jpg" alt="K-TShirt">
+            <h2>Head Phones</h2>
+            <button type="button" onclick="addToCart('K-TShirt')">ADD TO CART</button>
         </div>
 
+        <div class="product">
+            <img src="Images\K-Diaries.webp" alt="K-Diaries">
+            <h2>K-TShirt</h2>
+            <button type="button" onclick="addToCart('K-Diaries')">ADD TO CART</button>
+        </div>
+
+        <div class="product">
+            <img src="Images\K-muffler.jpeg" alt="K-Muffler">
+            <h2>K-Muffler</h2>
+            <button type="button" onclick="addToCart('K-Muffler')">ADD TO CART</button>
+        </div>
+
+        <div class="product">
+            <img src="Images\Boots.jpg" alt="K-Boots">
+            <h2>K-Boots</h2>
+            <button type="button" onclick="addToCart('K-Boots')">ADD TO CART</button>
+        </div>
+       
     </section>
 
     <footer>
-        &copy; 2023 K-Pop Items
+        &copy; 2023 K-POP ITEMS
     </footer>
 
     <script>
@@ -170,6 +189,5 @@
     </script>
 
 </body>
+
 </html>
-
-
