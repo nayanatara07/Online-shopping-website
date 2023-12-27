@@ -1,2 +1,2 @@
 # Online-shopping-website
-K-pop Items
+K-pop items
