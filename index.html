@@ -5,20 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>K-POP ITEMS</title>
+    <title>K-POP ITEMS- HOME</title>
 </head>
 
 <body>
 
     <header>
-        <h1>K-POP ITEMS</h1>
+        <h1>K-POP Euphoria</h1>
     </header>
 
     <nav>
-        <a href="#">Contact</a>
-        <a href="#">Shop</a>
-        <a href="#">About</a>
-        <a href="#">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="payment.html">Payment</a>
+        <a href="cart.html">Cart</a>
+        <a href="about.html">About</a>
+        <a href="index.html">Home</a>   
     </nav>
 
     <section>
@@ -26,69 +27,105 @@
         <div class="product">
             <img src="Images\Photo cards.jpg" alt="Photo Cards">
             <h2>Photo Cards</h2>
-            <button type="button" onclick="addToCart('Photo Cards')">ADD TO CART</button>
+            <p>Price: $5.00</p>
+            <button type="button" onclick="addToCart('Photo Cards', 5.00)">ADD TO CART</button>
         </div>
 
         <div class="product">
             <img src="Images\Key Chains.jpg" alt="Key Chains">
             <h2>Key Chains</h2>
-            <button type="button" onclick="addToCart('Key Chains')">ADD TO CART</button>
+            <p>Price: $3.00</p>
+            <button type="button" onclick="addToCart('Key Chains', 3.00)">ADD TO CART</button>
         </div>
 
         <div class="product">
             <img src="Images\Head Phones.jpg" alt="Head Phones">
             <h2>Head Phones</h2>
-            <button type="button" onclick="addToCart('Head Phones')">ADD TO CART</button>
+            <p>Price: $50.00</p>
+            <button type="button" onclick="addToCart('Head Phones', 50.00)">ADD TO CART</button>
         </div>
 
         <div class="product">
             <img src="Images\Army Bombs.jpg" alt="Army Bombs">
             <h2>Army Bombs</h2>
-            <button type="button" onclick="addToCart('Army Bombs')">ADD TO CART</button>
+            <p>Price: $65.00</p>
+            <button type="button" onclick="addToCart('Army Bombs', 65.00)">ADD TO CART</button>
         </div>
 
         <div class="product">
             <img src="Images\earphones.jpg" alt="Ear phones">
             <h2>Ear phones</h2>
-            <button type="button" onclick="addToCart('Ear phones')">ADD TO CART</button>
+            <p>Price: $2.50</p>
+            <button type="button" onclick="addToCart('Ear phones', 2.50)">ADD TO CART</button>
         </div>
 
         <div class="product">
             <img src="Images\K-TShirt.jpg" alt="K-TShirt">
-            <h2>Head Phones</h2>
-            <button type="button" onclick="addToCart('K-TShirt')">ADD TO CART</button>
+            <h2>K-TShirt</h2>
+            <p>Price: $24.00</p>
+            <button type="button" onclick="addToCart('K-TShirt', 24.00)">ADD TO CART</button>
         </div>
 
         <div class="product">
             <img src="Images\K-Diaries.webp" alt="K-Diaries">
-            <h2>K-TShirt</h2>
-            <button type="button" onclick="addToCart('K-Diaries')">ADD TO CART</button>
+            <h2>K-Diaries</h2>
+            <p>Price: $35.00</p>
+            <button type="button" onclick="addToCart('K-Diaries', 35.00)">ADD TO CART</button>
         </div>
 
         <div class="product">
             <img src="Images\K-muffler.jpeg" alt="K-Muffler">
             <h2>K-Muffler</h2>
-            <button type="button" onclick="addToCart('K-Muffler')">ADD TO CART</button>
+            <p>Price: $27.00</p>
+            <button type="button" onclick="addToCart('K-Muffler', 27.00)">ADD TO CART</button>
         </div>
 
         <div class="product">
             <img src="Images\Boots.jpg" alt="K-Boots">
             <h2>K-Boots</h2>
-            <button type="button" onclick="addToCart('K-Boots')">ADD TO CART</button>
+            <p>Price: $26.00</p>
+            <button type="button" onclick="addToCart('K-Boots', 26.00)">ADD TO CART</button>
         </div>
        
     </section>
 
     <footer>
-        &copy; 2023 K-POP ITEMS
+        &copy; 2023 K-POP Euphoria
     </footer>
 
-    <script>
-        function addToCart(item) {
-            alert(item + ' added to cart');
+<script>
+    // Initialize an empty cart object or retrieve existing cart from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    function addToCart(item, price) {
+        // Update the cart object
+        if (cart[item]) {
+            cart[item].quantity++;
+        } else {
+            cart[item] = { price: price, quantity: 1 };
         }
-    </script>
+
+        // Save the updated cart object in localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Inform the user that the item is added to the cart
+        alert(item + ' added to cart');
+
+        // Update the cart link with the number of items in the cart
+        updateCartLink();
+    }
+
+    // Function to update the cart link with the number of items in the cart
+    function updateCartLink() {
+        const cartLink = document.getElementById('cart-link');
+        const itemCount = Object.values(cart).reduce((total, item) => total + item.quantity, 0);
+
+        // Update the cart link text
+        cartLink.textContent = `Cart (${itemCount})`;
+    }
+</script>
 
 </body>
 
 </html>
+

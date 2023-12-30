@@ -6,6 +6,10 @@ body {
     padding: 0;
 }
 
+.product p {
+    text-align: center;
+}
+
 header {
     background-color: #b30caa;
     color: #fff;

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>K-POP ITEMS - Cart</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>K-POP Euphoria</h1>
+    </header>
+
+    <nav>
+        <a href="contact.html">Contact</a>
+        <a href="payment.html">Payment</a>
+        <a href="cart.html">Cart</a>
+        <a href="about.html">About</a>
+        <a href="index.html">Home</a>   
+    </nav>
+
+    <section>
+        <h2>Shopping Cart</h2>
+
+        <!-- Display selected items from the cart -->
+        <ul id="cart-items-list"></ul>
+
+        <div class="total">
+            <h3>Total Price: $<span id="total-price">0.00</span></h3>
+            <!-- Link to proceed to payment -->
+            <a href="payment.html"><button type="button">Proceed to Payment</button></a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2023 K-POP Euphoria
+    </footer>    
+
+<script>
+    // Retrieve cart items from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+    const cartItemsList = document.getElementById('cart-items-list');
+    const totalPriceElement = document.getElementById('total-price');
+
+    // Display selected items in the cart
+    updateCartDisplay();
+
+    // Calculate and display total price
+    const totalPrice = calculateTotalPrice(cart);
+    totalPriceElement.textContent = totalPrice.toFixed(2);
+
+    // Function to calculate total price
+    function calculateTotalPrice(cart) {
+        let totalPrice = 0;
+        for (const item in cart) {
+            totalPrice += cart[item].price * cart[item].quantity;
+        }
+        return totalPrice;
+    }
+
+    // Function to update the cart display
+    function updateCartDisplay() {
+        cartItemsList.innerHTML = ''; // Clear the existing items in the list
+
+        // Display selected items in the cart
+        for (const item in cart) {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${item} x${cart[item].quantity} - $${(cart[item].price * cart[item].quantity).toFixed(2)}`;
+
+            // Add a remove button next to each item
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.addEventListener('click', () => removeFromCart(item));
+
+            listItem.appendChild(removeButton);
+            cartItemsList.appendChild(listItem);
+        }
+    }
+
+    // Function to remove an item from the cart
+    function removeFromCart(item) {
+        if (cart[item].quantity > 1) {
+            cart[item].quantity--;
+        } else {
+            delete cart[item];
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart)); // Save the updated cart object in localStorage
+        updateCartDisplay(); // Update the cart display
+        const totalPrice = calculateTotalPrice(cart);
+        totalPriceElement.textContent = totalPrice.toFixed(2); // Update the total price
+    }
+</script>
+
+</body>
+
+</html>
