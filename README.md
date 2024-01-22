@@ -1,6 +1,6 @@
 # K-POP Euphoria - Online Shopping Website
 
-Welcome to K-POP Euphoria, your one-stop destination for all things K-POP! This online shopping website offers a variety of K-POP merchandise, from photo cards to stylish K-TShirts and more. Immerse yourself in the world of K-POP with our curated collection of high-quality items.
+Welcome to [K-POP Euphoria](https://nayanatara07.github.io/Online-shopping-website/), your one-stop destination for all things K-POP! This online shopping website offers a variety of K-POP merchandise, from photo cards to stylish K-TShirts and more. Immerse yourself in the world of K-POP with our curated collection of high-quality items.
 
 ## Table of Contents
 
@@ -56,3 +56,5 @@ The footer displays the copyright information, indicating that the content belon
 To enhance user experience, the website uses local storage to persistently store your shopping cart. This ensures that your cart items are retained even if you close or refresh the browser.
 
 Explore the world of K-POP with K-POP Euphoria – where passion meets merchandise! 🎶🛒
+
+~ NAYANA TARA
