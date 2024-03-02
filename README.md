@@ -57,4 +57,4 @@ To enhance user experience, the website uses local storage to persistently store
 
 Explore the world of K-POP with K-POP Euphoria – where passion meets merchandise! 🎶🛒
 
-~ NAYANA TARA
+~ B.R.NAYANA TARA
